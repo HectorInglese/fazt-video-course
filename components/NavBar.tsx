@@ -1,7 +1,20 @@
 'use client'
-import { Navbar, NavbarContent, NavbarItem, NavbarMenuToggle } from '@nextui-org/react';
+import { Navbar, NavbarContent, NavbarItem, NavbarMenu, NavbarMenuItem, NavbarMenuToggle } from '@nextui-org/react';
 import Link from 'next/link'
 import React, { useState } from 'react'
+
+const menuItems = [
+    "Profile",
+    "Dashboard",
+    "Activity",
+    "Analytics",
+    "System",
+    "Deployments",
+    "My Settings",
+    "Team Settings",
+    "Help & Feedback",
+    "Log Out",
+];
 
 const NavBar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -34,6 +47,22 @@ const NavBar = () => {
                         </Link>
                     </NavbarItem>
                 </NavbarContent>
+                <NavbarMenu>
+                    {menuItems.map((item, index) => (
+                        <NavbarMenuItem key={`${item}-${index}`}>
+                            <Link
+                                color={
+                                    index === 2 ? "primary" : index === menuItems.length - 1 ? "danger" : "foreground"
+                                }
+                                className="w-full"
+                                href="#"
+                                size="lg"
+                            >
+                                {item}
+                            </Link>
+                        </NavbarMenuItem>
+                    ))}
+                </NavbarMenu>
             </Navbar>
         </>
     );
