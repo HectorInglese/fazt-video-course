@@ -4,16 +4,9 @@ import Link from 'next/link'
 import React, { useState } from 'react'
 
 const menuItems = [
-    "Profile",
-    "Dashboard",
-    "Activity",
-    "Analytics",
-    "System",
-    "Deployments",
-    "My Settings",
-    "Team Settings",
-    "Help & Feedback",
-    "Log Out",
+    "Home",
+    "Posts",
+    "About"
 ];
 
 const NavBar = () => {
@@ -24,9 +17,9 @@ const NavBar = () => {
                 isBordered
                 isMenuOpen={isMenuOpen}
                 onMenuOpenChange={setIsMenuOpen}
-                position='static'
+                isBlurred={false}
             >
-                <NavbarContent className="sm:hidden" justify="start">
+                <NavbarContent className="sm:hidden" justify="stakrt">
                     <NavbarMenuToggle aria-label={isMenuOpen ? "Close menu" : "Open menu"} />
                 </NavbarContent>
 
@@ -55,15 +48,14 @@ const NavBar = () => {
                                     index === 2 ? "primary" : index === menuItems.length - 1 ? "danger" : "foreground"
                                 }
                                 className="w-full"
-                                href="#"
-                                size="lg"
+                                href={item === "Home" ? "/" : `/${item.toLocaleLowerCase()}`}
                             >
                                 {item}
                             </Link>
                         </NavbarMenuItem>
                     ))}
                 </NavbarMenu>
-            </Navbar>
+            </Navbar >
         </>
     );
 };

@@ -19,10 +19,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className='dark'>
-      <body className={lato.className}>
+      <body className={`min-h-screen ${lato.className}`}>
         <Providers>
           <NavBar />
-          {children}
+          <div className="h-full">
+            {children}
+          </div>
         </Providers>
       </body>
     </html>
