@@ -2,6 +2,7 @@
 import { Navbar, NavbarContent, NavbarItem, NavbarMenu, NavbarMenuItem, NavbarMenuToggle } from '@nextui-org/react';
 import Link from 'next/link'
 import React, { useState } from 'react'
+import ThemeSwitcher from './themeSwitch';
 
 const menuItems = [
     "Home",
@@ -18,26 +19,31 @@ const NavBar = () => {
                 isMenuOpen={isMenuOpen}
                 onMenuOpenChange={setIsMenuOpen}
                 isBlurred={false}
+                maxWidth='full'
+                className='absolute'
             >
-                <NavbarContent className="sm:hidden" justify="stakrt">
+                <NavbarContent className="sm:hidden" justify="start">
                     <NavbarMenuToggle aria-label={isMenuOpen ? "Close menu" : "Open menu"} />
                 </NavbarContent>
 
-                <NavbarContent className='hidden sm:flex gap-32' justify='end'>
+                <NavbarContent className='hidden sm:flex gap-24 w-full' justify="end" >
                     <NavbarItem>
                         <Link href={'/'}>
-                            Home
+                            HOME
                         </Link>
                     </NavbarItem>
                     <NavbarItem>
                         <Link href={'/posts'}>
-                            Posts
+                            POSTS
                         </Link>
                     </NavbarItem>
                     <NavbarItem>
                         <Link href={'/about'}>
-                            About
+                            ABOUT
                         </Link>
+                    </NavbarItem>
+                    <NavbarItem>
+                        <ThemeSwitcher />
                     </NavbarItem>
                 </NavbarContent>
                 <NavbarMenu>

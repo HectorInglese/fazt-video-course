@@ -1,17 +1,23 @@
 'use client'
-import { Button } from "@nextui-org/react";
+import { MoonIcon } from "@/public/assets/Icons/MoonIcon";
+import { SunIcon } from "@/public/assets/Icons/SunIcon";
+import { Switch } from "@nextui-org/react";
 import { useTheme } from "next-themes";
 
-export default function ThemeSwithcer() {
+export default function ThemeSwitcher() {
   const { theme, setTheme } = useTheme();
   return (
     <>
-      <Button
-        onClick={() => setTheme(theme === "light" ? "dark" : "light")}
-        className="m-4 p-4"
+      <Switch
+        defaultSelected
+        size="lg"
+        color="default"
+        startContent={<SunIcon />}
+        endContent={<MoonIcon />}
+        onValueChange={() => { setTheme(theme === "light" ? "dark" : "light") }}
+        className="cursor-pointer m-5 "
       >
-        Dark Mode
-      </Button>
+      </Switch>
     </>
   );
 };

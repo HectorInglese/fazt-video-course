@@ -11,7 +11,10 @@ const lato = Lato({
 export const metadata: Metadata = {
   title: 'Fazt Course Video',
   description: 'App created with Next.js',
-};
+  icons: {
+    icon: './assets/favicon.ico',
+  }
+};;
 export default function RootLayout({
   children,
 }: {
@@ -19,10 +22,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className='dark'>
-      <body className={`min-h-screen ${lato.className}`}>
+      <body className={`h-screen ${lato.className} scrollbar-hide`}>
         <Providers>
           <NavBar />
-          <div className="h-full">
+          <div className="h-screen pt-20 px-2 ">
             {children}
           </div>
         </Providers>
