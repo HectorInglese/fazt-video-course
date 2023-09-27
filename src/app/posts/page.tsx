@@ -12,7 +12,7 @@ const PotsPage = async () => {
         <section className="gap-2 grid grid-cols-[repeat(auto-fit,minmax(350px,1fr))]">
             {posts.map((post: PostInterface) => (
                 <CardComponent post={post} key={post.id} />
-            ))};
+            ))}
         </section>
     );
 };

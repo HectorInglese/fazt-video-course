@@ -25,7 +25,7 @@ export default function RootLayout({
       <body>
         <Providers>
           <NavBar />
-          <main className={`${lato.className} container mx-auto h-[calc(100vh-7rem)]`}>
+          <main className={`${lato.className} container mx-auto h-[calc(100vh-7rem)] pt-3`}>
             {children}
           </main>
         </Providers>

@@ -14,7 +14,7 @@ const DynamicPosts = async ({ params }: { params: { id: string } }) => {
     const post = await loadPost(params.id);
     return (
         <section className="h-full w-full">
-            <div className="flex justify-center m-5">
+            <div className="flex justify-center pb-3">
                 <CardComponent post={post} />
             </div>
             <Divider />
