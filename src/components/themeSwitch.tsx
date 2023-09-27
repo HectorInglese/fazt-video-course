@@ -1,6 +1,6 @@
 'use client'
-import { MoonIcon } from "@/public/assets/Icons/MoonIcon";
-import { SunIcon } from "@/public/assets/Icons/SunIcon";
+import { MoonIcon } from "../../public/assets/Icons/MoonIcon";
+import { SunIcon } from "../../public/assets/Icons/SunIcon";
 import { Switch } from "@nextui-org/react";
 import { useTheme } from "next-themes";
 

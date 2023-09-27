@@ -9,7 +9,7 @@ const LoadPosts = async () => {
 const PotsPage = async () => {
     const posts = await LoadPosts();
     return (
-        <section className="gap-2 w-full grid grid-cols-[repeat(auto-fit,minmax(350px,1fr))]">
+        <section className="gap-2 grid grid-cols-[repeat(auto-fit,minmax(350px,1fr))]">
             {posts.map((post: PostInterface) => (
                 <CardComponent post={post} key={post.id} />
             ))};

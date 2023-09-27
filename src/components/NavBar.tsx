@@ -20,7 +20,6 @@ const NavBar = () => {
                 onMenuOpenChange={setIsMenuOpen}
                 isBlurred={false}
                 maxWidth='full'
-                className='absolute'
             >
                 <NavbarContent className="sm:hidden" justify="start">
                     <NavbarMenuToggle aria-label={isMenuOpen ? "Close menu" : "Open menu"} />

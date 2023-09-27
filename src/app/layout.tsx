@@ -22,12 +22,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className='dark'>
-      <body className={`h-screen ${lato.className} scrollbar-hide`}>
+      <body>
         <Providers>
           <NavBar />
-          <div className="h-screen pt-20 px-2 ">
+          <main className={`${lato.className} container mx-auto h-[calc(100vh-7rem)]`}>
             {children}
-          </div>
+          </main>
         </Providers>
       </body>
     </html>
