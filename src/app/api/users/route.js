@@ -9,7 +9,6 @@ export async function GET() {
 
 export async function POST(req) {
     const {name , lastName} = await req.json();
-    console.log(`Key= ${process.env.TOKEN}`);
     return NextResponse
         .json(
             { message: "ok" }
